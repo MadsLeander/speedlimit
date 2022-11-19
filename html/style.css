@@ -1,0 +1,267 @@
+@font-face {
+	font-family: highwaygothic;
+	src: url('fonts/Highway-Gothic-Regular.ttf');
+}
+
+@font-face {
+	font-family: din1451;
+	src: url('fonts/DINMittelschriftStd.otf');
+}
+
+@font-face {
+	font-family: transport;
+	src: url('fonts/Transport-Medium.ttf');
+}
+
+#container {
+	display: none;
+}
+
+
+/* Speedlimit */
+
+#sign {
+	display: none;
+}
+
+#background {
+	right: 4vh;
+    bottom: 4vh;
+	position: absolute;
+	background-repeat: no-repeat;
+	background-size: cover;
+	height: 18vh;
+	width: 18vh;
+}
+
+#numerals {
+	text-align: center;
+	/* font-weight: bold; */
+}
+
+/* United States */
+.background-us-standard {
+	background: url("images/us_standard.png");
+}
+.numerals-us-standard {
+	margin-top: 8.5vh;
+	color: rgb(35, 31, 32);
+	font-size: 5vw;
+	font-weight: bold;
+	font-family: highwaygothic;
+}
+
+.background-us-oregon {
+	background: url("images/us_oregon.png");
+}
+.numerals-us-oregon {
+	margin-top: 4.5vh;
+	color: rgb(0, 0, 0);
+	font-size: 7vw;
+	font-weight: bold;
+	font-family: highwaygothic;
+    transform:scale(0.80, 1); /* W3C */
+}
+
+.background-us-metric {
+	background: url("images/us_metric.png");
+}
+.numerals-us-metric {
+	margin-top: 8.2vh;
+	color: rgb(0, 0, 0);
+	font-size: 2.5vw;
+	font-family: highwaygothic;
+}
+
+/* Canada */
+.background-canada-standard {
+	background: url("images/canada_standard.png");
+}
+.numerals-canada-standard {
+	margin-top: 5.5vh;
+	color: rgb(35, 31, 32);
+	font-size: 6vw;
+	font-family: highwaygothic;
+}
+
+.background-canada-ontario {
+	background: url("images/canada_ontario.png");
+}
+.numerals-canada-ontario {
+	margin-top: 5.25vh;
+	color: rgb(0, 0, 0);
+	font-size: 4.8vw;
+	font-family: highwaygothic;
+}
+
+.background-canada-yt-bc {
+	background: url("images/canada_yt_bc.png");
+}
+.numerals-canada-yt-bc {
+	margin-top: 3.3vh;
+	color: rgb(0, 0, 0);
+	font-size: 6vw;
+	font-family: Arial;
+	font-weight: 600;
+}
+
+/* Germany */
+.background-germany {
+	background: url("images/germany.png");
+}
+.numerals-germany {
+	margin-top: 3.25vh;
+	color: rgb(0, 0, 0);
+	font-size: 5.5vw;
+	font-family: din1451;
+}
+
+/* Japan */
+.background-japan {
+	background: url("images/japan.png");
+}
+.numerals-japan {
+	margin-top: 3.8vh;
+	color: rgb(0, 102, 179);
+	font-size: 5.2vw;
+	font-family: Arial;
+}
+
+/* United Kingdom */
+.background-united-kingdom {
+	background: url("images/united_kingdom.png");
+}
+.numerals-united-kingdom {
+	margin-top: 3.6vh;
+	color: rgb(0, 0, 0);
+	font-size: 5.2vw;
+	font-family: transport;
+    font-weight: bold;
+}
+
+/* Amber */
+.background-amber {
+	background: url("images/amber.png");
+}
+.numerals-amber {
+	margin-top: 3.1vh;
+	color: rgb(0, 0, 0);
+	font-size: 5.8vw;
+	font-family: Arial;
+	font-weight: bold;
+    
+}
+
+/* Australia */
+.background-australia {
+	background: url("images/australia.png");
+}
+.numerals-australia {
+	margin-top: 4.95vh;
+	color: rgb(0, 0, 0);
+	font-size: 4.25vw;
+	font-family: highwaygothic;
+}
+
+
+/* Advisory */
+
+#advisory-sign {
+	display: none;
+}
+
+#advisory-background {
+	right: 4vh;
+	height: 18vh;
+	width: 18vh;
+	position: absolute;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+#advisory-numerals {
+	text-align: center;
+}
+
+#advisory-label {
+	margin-top: 1.40vh;
+	text-align: center;
+	color: rgb(0, 0, 0);
+	margin-left: 0.15em;
+	letter-spacing: 0.14em;
+	font-size: 2.0vw;
+	font-weight: bold;
+	font-family: highwaygothic;
+}
+
+
+/* US */
+.advisory-background-us-advisory {
+	bottom: 23vh;
+	background: url("images/us_advisory.png");
+}
+.advisory-label-us-advisory {
+	margin-top: -2.5vh;
+	color: rgb(0, 0, 0);
+	font-size: 4vw;
+	font-weight: bold;
+	font-family: highwaygothic;
+}
+.advisory-numerals-us-advisory {
+	margin-top: -2.5vh;
+	color: rgb(0, 0, 0);
+	font-size: 4vw;
+	font-weight: bold;
+	font-family: highwaygothic;
+}
+
+/* EU */
+.advisory-background-eu-advisory {
+	bottom: 21vh;
+	background: url("images/eu_advisory.png");
+}
+.advisory-label-eu-advisory {
+	display: none;
+}
+.advisory-numerals-eu-advisory {
+	margin-top: 4.0vh;
+	color: rgb(255, 255, 255);
+	font-size: 5vw;
+	font-weight: bold;
+	font-family: Arial;
+}
+
+/* Sweden */
+.advisory-background-sweden-advisory {
+	bottom: 21.5vh;
+	background: url("images/sweden_advisory.png");
+}
+.advisory-label-sweden-advisory {
+	display: none;
+}
+.advisory-numerals-sweden-advisory {
+	margin-top: 6.0vh;
+	color: rgb(255, 255, 255);
+	font-size: 3vw;
+	font-weight: bold;
+	font-family: Arial;
+	letter-spacing: 0.25em;
+	text-indent: 0.25em;
+}
+
+/* United Kingdom */
+.advisory-background-uk-advisory {
+	bottom: 21.5vh;
+	background: url("images/uk_advisory.png");
+}
+.advisory-label-uk-advisory {
+	display: none;
+}
+.advisory-numerals-uk-advisory {
+	margin-top: 11.25vh;
+	margin-left: 5.55vh;
+	color: rgb(0, 0, 0);
+	font-size: 2.7vw;
+	font-weight: bold;
+	font-family: transport;
+}
