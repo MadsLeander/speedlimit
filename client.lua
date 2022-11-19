@@ -73,6 +73,7 @@ local function RefreshBaseSpeedLimit()
 	end
 end
 
+-- Functions for cheking if we are on a side of a point
 local sideOfPointFunctions = {
 	west = function(x, _y, point)
 		return x < point
@@ -88,9 +89,12 @@ local sideOfPointFunctions = {
 	end
 }
 
+-- Checks for overwrite speeds
 local function CheckOverwriteSpeeds(nodeId, position)
 	local streetData = speedlimits[currentStreet]
 	if streetData and streetData.overwrite then
+
+		-- Checks if the current node has is overwriten
 		if streetData.overwrite.nodes then
 			for _name, data in pairs(streetData.overwrite.nodes) do
 				if data.nodes[nodeId] then
@@ -100,6 +104,7 @@ local function CheckOverwriteSpeeds(nodeId, position)
 			end
 		end
 		
+		-- Checks if we are inside a radius
 		local insideRadiusData = speedlimits[currentStreet].overwrite.inside_radius
 		if insideRadiusData then
 			for _name, data in pairs(insideRadiusData) do
@@ -113,6 +118,7 @@ local function CheckOverwriteSpeeds(nodeId, position)
 			end
 		end
 
+		-- Checks if we are on one side of point
 		local sideOfPointData = speedlimits[currentStreet].overwrite.side_of_point
 		if sideOfPointData then
 			for side, data in pairs(sideOfPointData) do
@@ -132,9 +138,12 @@ local function CheckOverwriteSpeeds(nodeId, position)
 	end
 end
 
+-- Checks streetData if we should show any advisory signs
 local function CheckAdvisorySpeeds(nodeId, position)
 	local streetData = speedlimits[currentStreet]
 	if streetData and streetData.advisory then
+
+		-- Checks if the current node has any advisory signs
 		if streetData.advisory.nodes then
 			for name, data in pairs(streetData.advisory.nodes) do
 				if data.nodes[nodeId] then
@@ -144,6 +153,7 @@ local function CheckAdvisorySpeeds(nodeId, position)
 			end
 		end
 
+		-- Checks if we are inside a radius
 		local insideRadiusData = speedlimits[currentStreet].advisory.inside_radius
 		if insideRadiusData then
 			for name, data in pairs(insideRadiusData) do
@@ -155,6 +165,7 @@ local function CheckAdvisorySpeeds(nodeId, position)
 			end
 		end
 
+		-- Checks if we are on one side of point
 		local sideOfPointData = speedlimits[currentStreet].advisory.side_of_point
 		if sideOfPointData then
 			for side, data in pairs(sideOfPointData) do
@@ -166,12 +177,14 @@ local function CheckAdvisorySpeeds(nodeId, position)
 		end
 	end
 
+	-- Hide advisory UI if we could't find any advisories
 	if advisorySpeed ~= 0 then
 		advisorySpeed = 0
 		SendNUIMessage({ action = 'hideAdvisory' })
 	end
 end
 
+-- Gets executed when we change streets
 local function OnStreetChange(newStreet, nodeId, position)
 	currentStreet = newStreet
 	local newSpeedlimit = speedlimits['default'].limit
