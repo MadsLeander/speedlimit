@@ -242,7 +242,6 @@ local function StartStreetThread()
 			local nodeId = GetNthClosestVehicleNodeId(coords.x, coords.y, coords.z, 0.0, 1, 7.0, 2.5)
 			local position = GetVehicleNodePosition(nodeId)
 			local newStreet, _newCrossing = GetStreetNameAtCoord(position.x, position.y, position.z)
-			-- local dist = #(coords-position)
 
 			-- Checks if the street has changed
 			if newStreet ~= currentStreet then
