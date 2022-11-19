@@ -388,17 +388,3 @@ RegisterCommand("speedlimit", function(source, args, rawCommand)
 		DisplayNotification(Config.Localization.HideSpeedlimit)
 	end
 end, false)
-
---[[
-
-TODO:
-
-optimize css
-
-
-
-
-https://en.wikipedia.org/wiki/Speed_limit
-
-]]--
-
