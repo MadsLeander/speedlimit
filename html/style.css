@@ -15,6 +15,9 @@
 
 #container {
 	display: none;
+	position: absolute;
+	right: 4vh;
+    bottom: 4vh;
 }
 
 
@@ -25,18 +28,15 @@
 }
 
 #background {
-	right: 4vh;
-    bottom: 4vh;
-	position: absolute;
 	background-repeat: no-repeat;
 	background-size: cover;
-	height: 18vh;
-	width: 18vh;
+	height: 12rem;
+	width: 12rem;
 }
 
 #numerals {
 	text-align: center;
-	/* font-weight: bold; */
+	margin: 0;
 }
 
 /* United States */
@@ -44,32 +44,34 @@
 	background: url("images/us_standard.png");
 }
 .numerals-us-standard {
-	margin-top: 8.5vh;
 	color: rgb(35, 31, 32);
-	font-size: 5vw;
+	font-size: 5.5rem;
 	font-weight: bold;
 	font-family: highwaygothic;
+	padding-top: 5.8rem;
+	transform:scale(1.20, 1);
+	letter-spacing: 0.25rem;
+	text-indent: 0.25rem;
 }
 
 .background-us-oregon {
 	background: url("images/us_oregon.png");
 }
 .numerals-us-oregon {
-	margin-top: 4.5vh;
+	padding-top: 2.5rem;
 	color: rgb(0, 0, 0);
-	font-size: 7vw;
-	font-weight: bold;
+	font-size: 9rem;
 	font-family: highwaygothic;
-    transform:scale(0.80, 1); /* W3C */
+    transform:scale(0.80, 1);
 }
 
 .background-us-metric {
 	background: url("images/us_metric.png");
 }
 .numerals-us-metric {
-	margin-top: 8.2vh;
+	padding-top: 5.42rem;
 	color: rgb(0, 0, 0);
-	font-size: 2.5vw;
+	font-size: 3rem;
 	font-family: highwaygothic;
 }
 
@@ -78,9 +80,9 @@
 	background: url("images/canada_standard.png");
 }
 .numerals-canada-standard {
-	margin-top: 5.5vh;
+	padding-top: 3.75rem;
 	color: rgb(35, 31, 32);
-	font-size: 6vw;
+	font-size: 6.5rem;
 	font-family: highwaygothic;
 }
 
@@ -88,9 +90,9 @@
 	background: url("images/canada_ontario.png");
 }
 .numerals-canada-ontario {
-	margin-top: 5.25vh;
+	padding-top: 3.25rem;
 	color: rgb(0, 0, 0);
-	font-size: 4.8vw;
+	font-size: 6rem;
 	font-family: highwaygothic;
 }
 
@@ -98,9 +100,9 @@
 	background: url("images/canada_yt_bc.png");
 }
 .numerals-canada-yt-bc {
-	margin-top: 3.3vh;
+	padding-top: 2rem;
 	color: rgb(0, 0, 0);
-	font-size: 6vw;
+	font-size: 7rem;
 	font-family: Arial;
 	font-weight: 600;
 }
@@ -110,10 +112,17 @@
 	background: url("images/germany.png");
 }
 .numerals-germany {
-	margin-top: 3.25vh;
+	padding-top: 2rem;
 	color: rgb(0, 0, 0);
-	font-size: 5.5vw;
+	font-size: 7rem;
 	font-family: din1451;
+}
+
+.numerals-cramp-germany {
+	padding-top: 2.5rem;
+	font-size: 6rem;
+	letter-spacing: -0.3rem;
+	text-indent: -0.3rem;
 }
 
 /* Japan */
@@ -121,9 +130,9 @@
 	background: url("images/japan.png");
 }
 .numerals-japan {
-	margin-top: 3.8vh;
+	padding-top: 2.6rem;
 	color: rgb(0, 102, 179);
-	font-size: 5.2vw;
+	font-size: 6rem;
 	font-family: Arial;
 }
 
@@ -132,9 +141,9 @@
 	background: url("images/united_kingdom.png");
 }
 .numerals-united-kingdom {
-	margin-top: 3.6vh;
+	padding-top: 2.2rem;
 	color: rgb(0, 0, 0);
-	font-size: 5.2vw;
+	font-size: 6.5rem;
 	font-family: transport;
     font-weight: bold;
 }
@@ -144,12 +153,11 @@
 	background: url("images/amber.png");
 }
 .numerals-amber {
-	margin-top: 3.1vh;
+	padding-top: 1.9rem;
 	color: rgb(0, 0, 0);
-	font-size: 5.8vw;
+	font-size: 7.25rem;
 	font-family: Arial;
 	font-weight: bold;
-    
 }
 
 /* Australia */
@@ -157,9 +165,9 @@
 	background: url("images/australia.png");
 }
 .numerals-australia {
-	margin-top: 4.95vh;
+	padding-top: 3.2rem;
 	color: rgb(0, 0, 0);
-	font-size: 4.25vw;
+	font-size: 5.25rem;
 	font-family: highwaygothic;
 }
 
@@ -171,10 +179,8 @@
 }
 
 #advisory-background {
-	right: 4vh;
-	height: 18vh;
-	width: 18vh;
-	position: absolute;
+	height: 12rem;
+	width: 12rem;
 	background-repeat: no-repeat;
 	background-size: cover;
 }
@@ -184,84 +190,81 @@
 }
 
 #advisory-label {
-	margin-top: 1.40vh;
 	text-align: center;
-	color: rgb(0, 0, 0);
-	margin-left: 0.15em;
-	letter-spacing: 0.14em;
-	font-size: 2.0vw;
-	font-weight: bold;
-	font-family: highwaygothic;
 }
 
 
 /* US */
 .advisory-background-us-advisory {
-	bottom: 23vh;
+	margin-bottom: 1vh;
 	background: url("images/us_advisory.png");
 }
 .advisory-label-us-advisory {
-	margin-top: -2.5vh;
+	padding-top: 1.25rem;
 	color: rgb(0, 0, 0);
-	font-size: 4vw;
-	font-weight: bold;
+	letter-spacing: 0.1rem;
+	text-indent: 0.1rem;
+	transform:scale(1.20, 1);
+	font-size: 1.8rem;
+	font-weight: 600;
 	font-family: highwaygothic;
 }
 .advisory-numerals-us-advisory {
-	margin-top: -2.5vh;
+	margin-top: -0.6rem;
 	color: rgb(0, 0, 0);
-	font-size: 4vw;
+	font-size: 4.5rem;
 	font-weight: bold;
 	font-family: highwaygothic;
+	transform:scale(1.30, 1);
 }
 
 /* EU */
 .advisory-background-eu-advisory {
-	bottom: 21vh;
+	margin-bottom: 1vh;
 	background: url("images/eu_advisory.png");
 }
 .advisory-label-eu-advisory {
 	display: none;
 }
 .advisory-numerals-eu-advisory {
-	margin-top: 4.0vh;
+	padding-top: 2.75rem;
 	color: rgb(255, 255, 255);
-	font-size: 5vw;
+	font-size: 5.8rem;
 	font-weight: bold;
 	font-family: Arial;
 }
 
 /* Sweden */
 .advisory-background-sweden-advisory {
-	bottom: 21.5vh;
+	margin-bottom: 1vh;
 	background: url("images/sweden_advisory.png");
 }
 .advisory-label-sweden-advisory {
 	display: none;
 }
 .advisory-numerals-sweden-advisory {
-	margin-top: 6.0vh;
+	padding-top: 4rem;
 	color: rgb(255, 255, 255);
-	font-size: 3vw;
+	font-size: 3.7rem;
 	font-weight: bold;
 	font-family: Arial;
-	letter-spacing: 0.25em;
-	text-indent: 0.25em;
+	letter-spacing: 0.75rem;
+	text-indent: 0.75rem;
 }
 
 /* United Kingdom */
 .advisory-background-uk-advisory {
-	bottom: 21.5vh;
+	margin-bottom: 1vh;
 	background: url("images/uk_advisory.png");
 }
 .advisory-label-uk-advisory {
 	display: none;
 }
 .advisory-numerals-uk-advisory {
-	margin-top: 11.25vh;
+	padding-top: 7.45rem;
 	margin-left: 5.55vh;
 	color: rgb(0, 0, 0);
-	font-size: 2.7vw;
+	font-size: 3.25rem;
 	font-weight: bold;
 	font-family: transport;
 }

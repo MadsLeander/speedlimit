@@ -1,6 +1,7 @@
 let displayOnlyOnChange = false;
 let displayCounter = 0;
 let displayWait = 3000;
+let type = ''
 
 window.onload = (e) => {
 	window.addEventListener('message', onMessageRecieved);
@@ -10,6 +11,15 @@ function onMessageRecieved(event){
 	const data = event.data;
 	switch (data.action) {
 		case "changeLimit":
+			const hasClass = $("#numerals").hasClass(".numerals-cramp-"+type)
+			if (data.numeral >= 100) {
+				if (!hasClass) {
+					$("#numerals").addClass("numerals-cramp-"+type)
+				}
+			} else if (hasClass == true) {
+				$("#numerals").removeClass("numerals-cramp-"+type)
+			}
+
 			if (data.fade == true) {
 				$("#numerals").fadeOut(200, function() {
 					$(this).text(data.numeral).fadeIn(200);
@@ -45,14 +55,14 @@ function onMessageRecieved(event){
 			$("#advisory-label").text(data.label);
 			break;
 		case "showAdvisory":
-			$("#advisory-sign").show(500);
+			$("#advisory-sign").slideToggle(500);
 			break;
 		case "hideAdvisory":
-			$("#advisory-sign").hide(500);
+			$("#advisory-sign").slideToggle(500);
 			break;
 		case "show":
 			$("#sign").show(0);
-			$("#container").show(500);
+			$("#container").fadeIn(500);
 			break;
 		case "hide":
 			$("#container").fadeOut(400, function() {
@@ -61,12 +71,13 @@ function onMessageRecieved(event){
 			});
 			break;
 		case "setConfig":
-			const backgroundClass = "background-" + data.type;
+			type = data.type;
+			const backgroundClass = "background-" + type;
 			const background = $("#background")
 			background.removeClass();
 			background.addClass(backgroundClass);
 
-			const numeralClass = "numerals-" + data.type;
+			const numeralClass = "numerals-" + type;
 			const numerals = $("#numerals")
 			numerals.removeClass();
 			numerals.addClass(numeralClass);
