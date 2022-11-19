@@ -4,8 +4,8 @@ Config = {}
 Config.Enabled = true
 
 -- The type of sign and advisory sign to use (see the bottom of this file for a list of possible signs)
-Config.SignType = 'united-kingdom'
-Config.AdvisoryType = 'uk-advisory' -- or false (no quotes) to disable
+Config.SignType = 'us-standard'
+Config.AdvisoryType = 'us-advisory' -- or false (no quotes) to disable
 
 -- If set to true, only the driver of the vehicle will be able to see the speedlimit
 Config.DriverOnly = false
