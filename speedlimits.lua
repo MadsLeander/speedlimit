@@ -847,6 +847,7 @@ local speedlimits = {
     [1543716113] = { limit = Config.Speedlimits.LosSantos }, -- Mutiny Rd
     [-1282586415] = { limit = Config.Speedlimits.LosSantos }, -- Alta Pl
     [1679357694] = { limit = Config.Speedlimits.LosSantos }, -- Eclipse Blvd
+    [320731036] = { limit = Config.Speedlimits.LosSantos }, -- Capital Blvd
     [-1810087183] = { limit = 25 }, -- Caesars Place
     [607427175] = { limit = 25 }, -- Tackle St
     [-1132306461] = { limit = 25 }, -- Imagination Ct
