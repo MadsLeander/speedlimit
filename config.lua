@@ -32,6 +32,12 @@ Config.Localization = {
 }
 
 -- Blacklisted vehicle classes
+--[[
+13: Cycles
+14: Boats
+15: Helicopters
+16: Planes
+]]--
 Config.BlacklistedClasses = {
     [13] = true, [14] = true, [15] = true, [16] = true
 }
