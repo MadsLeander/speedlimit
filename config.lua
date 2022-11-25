@@ -1,6 +1,6 @@
 Config = {}
 
--- Whether or not it is enabled by default (if false people have to use command to enable it)
+-- Whether or not it is enabled by default (if false people have to use the /speedlimit command to enable it)
 Config.Enabled = true
 
 -- The type of sign and advisory sign to use (see the bottom of this file for a list of possible signs)
@@ -51,11 +51,11 @@ us-oregon
 us-metric
 canada-standard
 canada-ontario
-canada-yt-bc
+canada-yt-bc (Yukon and British Columbia)
 germany
 japan
 united-kingdom
-amber
+amber (Sweden, Finland, Iceland etc.)
 australia
 
 Advisory/Recomended Speedlimit Signs:
