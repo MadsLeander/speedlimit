@@ -457,8 +457,21 @@ local speedlimits = {
     [-932639616] = { limit = Config.Speedlimits.Freeway }, -- Del Perro Fwy
     [1308375563] = { limit = Config.Speedlimits.Freeway }, -- La Puerta Fwy
     [-457429001] = { limit = Config.Speedlimits.Freeway }, -- Miriam Turner Overpass
-    [-428570144] = { limit = Config.Speedlimits.Freeway }, -- Olympic Fwy
     [745714793] = { limit = Config.Speedlimits.Freeway }, -- Equality Way
+    -- Olympic Fwy
+    [-428570144] = {
+        limit = Config.Speedlimits.Freeway,
+        overwrite = {
+            nodes = {
+                ["city_streets"] = {
+                    limit = Config.Speedlimits.LosSantos,
+                    nodes = {
+                        51642800, 44106160, 41615792, 46662064, 44040624, 46596528, 50069936, 51577264, 50135472, 56820144, 59507121, 59376049, 59834801, 61538737, 58982833, 60555697, 44892592, 49086897
+                    }
+                }
+            }
+        }
+    },
     -- Olympic Fwy
     [422479126] = {
         limit = Config.Speedlimits.Freeway,
@@ -474,6 +487,12 @@ local speedlimits = {
                     limit = 15,
                     nodes = {
                         5505620, 4981332, 4653652, 983637, 1180245, 2032213, 1770069, 1507925, 1245781, 1638997
+                    }
+                },
+                ["city_streets"] = {
+                    limit = Config.Speedlimits.LosSantos,
+                    nodes = {
+                        53936561, 52167089, 58458545, 59376049, 58982833, 54854065, 55574961
                     }
                 }
             }
@@ -764,9 +783,6 @@ local speedlimits = {
     [-987282051] = { limit = Config.Speedlimits.LosSantos }, -- Vinewood Blvd
     [-710539272] = { limit = Config.Speedlimits.LosSantos }, -- Gentry Lane
     [-1219752634] = { limit = Config.Speedlimits.LosSantos }, -- North Sheldon Ave
-    [-111553938] = { limit = Config.Speedlimits.LosSantos }, -- Power St
-    [146394227] = { limit = Config.Speedlimits.LosSantos }, -- Alta St
-    [1759459593] = { limit = Config.Speedlimits.LosSantos }, -- Strawberry Ave
     [1680892246] = { limit = Config.Speedlimits.LosSantos }, -- Macdonald St
     [1264277927] = { limit = Config.Speedlimits.LosSantos }, -- Innocence Blvd
     [-1742121949] = { limit = Config.Speedlimits.LosSantos }, -- Labor Pl
@@ -853,6 +869,48 @@ local speedlimits = {
     [-1132306461] = { limit = 25 }, -- Imagination Ct
     [-1912735485] = { limit = 25 }, -- Invention Ct
     [-1932337127] = { limit = 10 }, -- Abattoir Ave
+    -- Strawberry Ave
+    [1759459593] = {
+        limit = Config.Speedlimits.LosSantos,
+        overwrite = {
+            nodes = {
+                ["olympic"] = {
+                    limit = Config.Speedlimits.Freeway,
+                    nodes = {
+                        62980529, 65208753, 65012145, 64750001, 64618929, 64356785, 63242673, 62783921, 62587313, 62849457, 62914993, 63111601
+                    }
+                }
+            }
+        }
+    },
+    -- Alta St
+    [146394227] = {
+        limit = Config.Speedlimits.LosSantos,
+        overwrite = {
+            nodes = {
+                ["olympic"] = {
+                    limit = Config.Speedlimits.Freeway,
+                    nodes = {
+                        53281200, 52953520, 56164784, 56426928
+                    }
+                }
+            }
+        }
+    },
+    -- Power St
+    [-111553938] = {
+        limit = Config.Speedlimits.LosSantos,
+        overwrite = {
+            nodes = {
+                ["olympic"] = {
+                    limit = Config.Speedlimits.Freeway,
+                    nodes = {
+                        42205616, 42402224
+                    }
+                }
+            }
+        }
+    },
     -- El Rancho Blvd
     [2142106034] = {
         limit = Config.Speedlimits.LosSantos,
