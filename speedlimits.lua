@@ -886,6 +886,7 @@ local speedlimits = {
             }
         }
     },
+    [119898327] = { limit = 30 }, -- Decker St
     -- Alta St
     [146394227] = {
         limit = Config.Speedlimits.LosSantos,
