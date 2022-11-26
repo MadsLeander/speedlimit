@@ -869,6 +869,9 @@ local speedlimits = {
     [-1132306461] = { limit = 25 }, -- Imagination Ct
     [-1912735485] = { limit = 25 }, -- Invention Ct
     [-1932337127] = { limit = 10 }, -- Abattoir Ave
+    [702752937] = { limit = 30 }, -- Amarillo Way
+    [1151973635] = { limit = 30 }, -- Tower Way
+
     -- Strawberry Ave
     [1759459593] = {
         limit = Config.Speedlimits.LosSantos,
