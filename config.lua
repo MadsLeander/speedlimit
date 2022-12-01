@@ -17,8 +17,6 @@ Config.ChangeDisplayTime = 3000 -- ms the speedlimit should be displayed after c
 -- Speedlimits for certain areas. NOTE: Not every road draws it speed limit from these.
 Config.Speedlimits = {
     Default = 35,
-    LosSantos = 35,
-    VinewoodHills = 25, -- Only for the roads with 25 speed limits signs
     DirtRoads = 35, -- Most, but not all dirt roads
     PaletoBay = 35,
     SandyShores = 35,
