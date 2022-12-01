@@ -848,6 +848,8 @@ local speedlimits = {
     [-2134115377] = { limit = 30 }, -- South Arsenal St
     [1543716113] = { limit = 30 }, -- Mutiny Rd
     [1317352724] = { limit = 30 }, -- Exceptionalists Way
+    [-1517798434] = { limit = 30 }, -- Peaceful St
+    [1332344845] = { limit = 30 }, -- Swiss St
     [-305940236] = { limit = 25 }, -- Bay City Incline
     [84037695] = { limit = 25 }, -- Sandcastle Way
     [-820353525] = { limit = 25 }, -- Magellan Ave
@@ -863,7 +865,6 @@ local speedlimits = {
     [1680892246] = { limit = 25 }, -- Macdonald St
     [1713022841] = { limit = 25 }, -- Jamestown St
     [-1096634323] = { limit = 25 }, -- Covenant Ave
-    [-1517798434] = { limit = 25 }, -- Peaceful St
     [1094585465] = { limit = 25 }, -- Lindsay Circus
     [1397588007] = { limit = 25 }, -- Ginger St
     [-563748952] = { limit = 25 }, -- North Archer Ave
@@ -872,7 +873,6 @@ local speedlimits = {
     [-1932531079] = { limit = 25 }, -- Aguja St
     [161498934] = { limit = 25 }, -- Cortes St
     [607427175] = { limit = 25 }, -- Tackle St
-    [1332344845] = { limit = 25 }, -- Swiss St
     [-1132306461] = { limit = 25 }, -- Imagination Ct
     [-1912735485] = { limit = 25 }, -- Invention Ct
     [-1810087183] = { limit = 25 }, -- Caesars Place
