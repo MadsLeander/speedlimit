@@ -13,7 +13,7 @@ client_scripts {
 
 ui_page('html/index.html')
 
-files({
+files {
 	'html/index.html',
 	'html/script.js',
 	'html/style.css',
@@ -21,4 +21,4 @@ files({
 	'html/fonts/Highway-Gothic-Regular.ttf',
 	'html/fonts/DINMittelschriftStd.otf',
 	'html/fonts/Transport-Medium.ttf',
-})
+}
