@@ -789,6 +789,7 @@ local speedlimits = {
 
     -- Los Santos --
     [-858728061] = { limit = 40 }, -- Popular St
+    [568161725] = { limit = 35 }, -- Boulevard Del Perro
     [629262578] = { limit = 35 }, -- Boulevard Del Perro
     [1376516937] = { limit = 35 }, -- Palomino Ave
     [1679357694] = { limit = 35 }, -- Eclipse Blvd
