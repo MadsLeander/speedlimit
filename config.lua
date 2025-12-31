@@ -1,5 +1,8 @@
 Config = {}
 
+-- Will debug parts of the script in F8 console
+Config.Debug = false
+
 -- Whether or not it is enabled by default (if false people have to use the /speedlimit command to enable it)
 Config.Enabled = true
 

@@ -3,7 +3,7 @@ game 'gta5'
 
 author 'Mads'
 description 'Speedlimit'
-version '1.0.0'
+version '1.0.1'
 
 client_scripts {
 	'config.lua',

@@ -93,7 +93,6 @@ local sideOfPointFunctions = {
 local function CheckOverwriteSpeeds(nodeId, position)
 	local streetData = speedlimits[currentStreet]
 	if streetData and streetData.overwrite then
-
 		-- Checks if the current node has is overwriten
 		if streetData.overwrite.nodes then
 			for _name, data in pairs(streetData.overwrite.nodes) do
@@ -103,12 +102,12 @@ local function CheckOverwriteSpeeds(nodeId, position)
 				end
 			end
 		end
-		
+
 		-- Checks if we are inside a radius
 		local insideRadiusData = speedlimits[currentStreet].overwrite.inside_radius
 		if insideRadiusData then
 			for _name, data in pairs(insideRadiusData) do
-				local dist = #(position.xy-data.center)
+				local dist = #(position.xy - data.center)
 				if dist < data.radius then
 					if data.limit ~= overwriteSpeed then
 						OverrideSpeedLimit(data.limit)
@@ -142,7 +141,6 @@ end
 local function CheckAdvisorySpeeds(nodeId, position)
 	local streetData = speedlimits[currentStreet]
 	if streetData and streetData.advisory then
-
 		-- Checks if the current node has any advisory signs
 		if streetData.advisory.nodes then
 			for name, data in pairs(streetData.advisory.nodes) do
@@ -157,7 +155,7 @@ local function CheckAdvisorySpeeds(nodeId, position)
 		local insideRadiusData = speedlimits[currentStreet].advisory.inside_radius
 		if insideRadiusData then
 			for name, data in pairs(insideRadiusData) do
-				local dist = #(position.xy-data.center)
+				local dist = #(position.xy - data.center)
 				if dist < data.radius then
 					SetAdvisorySpeed(data.limit, data.label)
 					return
@@ -189,11 +187,12 @@ local function OnStreetChange(newStreet, nodeId, position)
 	currentStreet = newStreet
 	local newSpeedlimit = speedlimits['default'].limit
 	local streetData = speedlimits[newStreet]
-	
+
 	if streetData then
 		newSpeedlimit = streetData.limit
 	else
-		print("OnStreetChange: streetData not found! Street: "..GetStreetNameFromHashKey(newStreet).." ("..newStreet..")")
+		print("OnStreetChange: streetData not found! Street: " ..
+		GetStreetNameFromHashKey(newStreet) .. " (" .. newStreet .. ")")
 	end
 
 	CheckOverwriteSpeeds(nodeId, position)
@@ -226,7 +225,6 @@ end
 -- Main Thread --
 local function StartStreetThread()
 	Citizen.CreateThread(function()
-
 		ShowNUISpeedLimit()
 
 		while true do
@@ -382,9 +380,76 @@ RegisterCommand("speedlimit", function(source, args, rawCommand)
 
 		StartStreetThread()
 	else
-		RemoveEventHandler(eventHandler)
-		eventHandler = nil
+		if eventHandler ~= nil then
+			RemoveEventHandler(eventHandler)
+			eventHandler = nil
+		end
 
 		DisplayNotification(Config.Localization.HideSpeedlimit)
 	end
 end, false)
+
+local function debugPrint(msg)
+	if Config.Debug then
+		print("[DEBUG] " .. msg)
+	end
+end
+
+exports("GetCurrentSpeedlimit", function()
+	local ped = PlayerPedId()
+	local coords = GetOffsetFromEntityInWorldCoords(ped, 0.0, 5.0, 0.0)
+	local nodeId = GetNthClosestVehicleNodeId(coords.x, coords.y, coords.z, 0.0, 1, 7.0, 2.5)
+	local position = GetVehicleNodePosition(nodeId)
+	local newStreet, _ = GetStreetNameAtCoord(position.x, position.y, position.z)
+
+	local streetData = speedlimits[newStreet]
+	local returnSpeed = 0
+
+	debugPrint(("[SpeedLimit] Street ID: %s | Node ID: %s"):format(newStreet, nodeId))
+
+	if streetData and streetData.overwrite then
+		-- Node overwrite check
+		if streetData.overwrite.nodes then
+			for name, data in pairs(streetData.overwrite.nodes) do
+				if data.nodes[nodeId] then
+					returnSpeed = data.limit
+					debugPrint(("[SpeedLimit] Matched NODE override '%s' -> %s mph"):format(name, data.limit))
+				end
+			end
+		end
+
+		-- Radius overwrite check
+		local insideRadiusData = streetData.overwrite.inside_radius
+		if insideRadiusData then
+			for name, data in pairs(insideRadiusData) do
+				local dist = #(position.xy - data.center)
+				if dist < data.radius then
+					returnSpeed = data.limit
+					debugPrint(("[SpeedLimit] Inside RADIUS '%s' | Dist: %.2f / %.2f -> %s mph"):format(
+						name, dist, data.radius, data.limit
+					))
+				end
+			end
+		end
+
+		-- Side of point overwrite check
+		local sideOfPointData = streetData.overwrite.side_of_point
+		if sideOfPointData then
+			for side, data in pairs(sideOfPointData) do
+				if sideOfPointFunctions[side](position.x, position.y, data.point) then
+					returnSpeed = data.limit
+					debugPrint(("[SpeedLimit] Matched SIDE '%s' -> %s mph"):format(side, data.limit))
+				end
+			end
+		end
+	end
+
+	-- Fallback to street default
+	if returnSpeed == 0 then
+		returnSpeed = streetData.limit
+		debugPrint(("[SpeedLimit] Using default street limit -> %s mph"):format(returnSpeed))
+	end
+
+	debugPrint(("[SpeedLimit] Final Speed Returned -> %s mph"):format(returnSpeed))
+	return returnSpeed
+end)
