@@ -396,6 +396,10 @@ local function debugPrint(msg)
 end
 
 exports("GetCurrentSpeedlimit", function()
+	if speedlimit ~= 0 then
+		return speedlimit
+	end
+
 	local ped = PlayerPedId()
 	local coords = GetOffsetFromEntityInWorldCoords(ped, 0.0, 5.0, 0.0)
 	local nodeId = GetNthClosestVehicleNodeId(coords.x, coords.y, coords.z, 0.0, 1, 7.0, 2.5)
